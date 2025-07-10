@@ -10,7 +10,8 @@ const count = ref('')
 const result = ref('')
 const result2 = ref('')
 const hanldeClick = async () => { 
-  const res = await fetch(`api/helloworld`);
+  const url = process.env.NODE_ENV === 'production' ? 'helloworld' : 'api/helloworld';
+  const res = await fetch(url);
   const text = await res.text()
   console.log("🚀 ~ hanldeClick ~ text:", text)
   result.value = text;
@@ -24,12 +25,14 @@ const hanldeClick2 = async () => {
 
 const handleCount = async () => {
   count.value++;
-  const res = await fetch(`api/get/${count.value}?from=homepage&name=test`);
+  const url = process.env.NODE_ENV === 'production' ? `get/${count.value}?from=homepage&name=test` : `api/get/${count.value}?from=homepage&name=test`;
+  const res = await fetch(url);
   console.log("🚀 ~ handleCount ~ count:", res);
 }
 
 const handlePost = async () => {
-  const res = await fetch(`api/post`, {
+  const url = process.env.NODE_ENV === 'production' ? 'post' : 'api/post';
+  const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
