@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "vercel": "link:../../Library/pnpm/global/5/node_modules/vercel",
     "vue": "^3.2.45"
   },
   "devDependencies": {

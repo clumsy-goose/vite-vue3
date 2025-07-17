@@ -9,7 +9,7 @@ export function onRequestGet(context) {
     userId: context.params.id,
     queryParams: {
       from: from || '未提供from参数',
-      name: name || '未提供namedengd参数'
+      name: name || '未提供name参数'
     },
     timestamp: new Date().toISOString()
   };

@@ -10,7 +10,7 @@ const count = ref('')
 const result = ref('')
 const result2 = ref('')
 const hanldeClick = async () => { 
-  const url = process.env.NODE_ENV === 'production' ? 'helloworld' : 'api/helloworld';
+  const url = process.env.NODE_ENV === 'production' ? 'helloworld' : 'helloworld';
   const res = await fetch(url);
   const text = await res.text()
   console.log("🚀 ~ hanldeClick ~ text:", text)
@@ -25,13 +25,13 @@ const hanldeClick2 = async () => {
 
 const handleCount = async () => {
   count.value++;
-  const url = process.env.NODE_ENV === 'production' ? `get/${count.value}?from=homepage&name=test` : `api/get/${count.value}?from=homepage&name=test`;
+  const url = process.env.NODE_ENV === 'production' ? `get/${count.value}?from=homepage&name=test` : `get/${count.value}?from=homepage&name=test`;
   const res = await fetch(url);
   console.log("🚀 ~ handleCount ~ count:", res);
 }
 
 const handlePost = async () => {
-  const url = process.env.NODE_ENV === 'production' ? 'post' : 'api/post';
+  const url = process.env.NODE_ENV === 'production' ? 'post' : 'post';
   const res = await fetch(url, {
     method: 'POST',
     headers: {
@@ -46,6 +46,12 @@ const handlePost = async () => {
   console.log("🚀 ~ handlePost ~ json:", json);
 }
 
+const handleVercelGet = async () => {
+  const url = 'api/helloworld';
+  const res = await fetch(url);
+  console.log("🚀 ~ handleVercelPost ~ json:", res);
+}
+
 </script>
 
 <template>
@@ -56,6 +62,7 @@ const handlePost = async () => {
     <button @click="hanldeClick"> 点击触发边缘函数 </button>
     <button @click="hanldeClick2"> 点击触发后端接口 </button>
     <button @click="handlePost"> 点击触发post请求 </button>
+    <button @click="handleVercelGet"> 点击触发vercel的边缘函数33556 </button>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
@@ -68,12 +75,12 @@ const handlePost = async () => {
     Check out
     <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
       >create-vue</a
-    >, the official Vue + Vite starter
+    >, the official Vue + Vite sta
   </p>
   <p>
     Install
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    in your IDE for a better DX
+    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Vol</a>
+    in your IDE for a better 
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
