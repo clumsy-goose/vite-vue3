@@ -29,7 +29,7 @@ export async function onRequest(context) {
     return new Response(
       JSON.stringify({
         code: 0,
-        message: 'POST request processed successfully',
+        message: 'POST request processed successfully edge function',
         data: processedData
       }),
       {

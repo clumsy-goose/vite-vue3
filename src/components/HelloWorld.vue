@@ -47,7 +47,7 @@ const handlePost = async () => {
 }
 
 const handleVercelGet = async () => {
-  const url = 'api/helloworld';
+  const url = '/';
   const res = await fetch(url);
   console.log("🚀 ~ handleVercelPost ~ json:", res);
 }
@@ -60,12 +60,12 @@ const handleVercelGet = async () => {
   <div class="card">
     <button type="button" @click="handleCount">点击触发api/get/:id {{ count }}</button>
     <button @click="hanldeClick"> 点击触发边缘函数 </button>
-    <button @click="hanldeClick2"> 点击触发后端接口 </button>
+    <button @click="hanldeClick2"> 点击触发后端接口12 </button>
     <button @click="handlePost"> 点击触发post请求 </button>
-    <button @click="handleVercelGet"> 点击触发vercel的边缘函数33556 </button>
+    <button @click="handleVercelGet"> 点击触发vercel的边缘函数33551 </button>
     <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
+      Edit1234
+      <code>components/HelloWorld.vue</code> to test HMR1234
     </p>
     <p>{{ result }}</p>
     <p>{{ result2 }}</p>
@@ -82,7 +82,7 @@ const handleVercelGet = async () => {
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Vol</a>
     in your IDE for a better 
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more 1</p>
 </template>
 
 <style scoped>

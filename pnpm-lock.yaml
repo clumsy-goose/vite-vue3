@@ -11,9 +11,6 @@ importers:
 
   .:
     dependencies:
-      vercel:
-        specifier: link:../../Library/pnpm/global/5/node_modules/vercel
-        version: link:../../Library/pnpm/global/5/node_modules/vercel
       vue:
         specifier: ^3.2.45
         version: 3.5.17
